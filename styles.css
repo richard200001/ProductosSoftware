@@ -1,0 +1,212 @@
+/* styles.css */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #007bff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+nav {
+    background: #007bff; /* Color de fondo  */
+    padding: 15px 20px; /* Espaciado interno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex; /* flexbox para alinear los elementos */
+    flex-wrap: wrap;
+    justify-content: center; /* Centra los elementos */
+}
+
+nav ul li {
+    margin: 0 20px; /* Espaciado entre los elementos */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500; /* Aumenta el peso de la fuente */
+    padding: 8px 12px; /* Espaciado interno para botones */
+    border-radius: 4px; /* Bordes redondeados */
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo en hover */
+    color: #ffd700; /* Color de texto en hover */
+}
+
+
+#portfolio {
+    padding: 20px;
+    background: #fff;
+}
+
+.project {
+    display: flex; /* Flex para alinear la imagen y el contenido */
+    justify-content: space-between; /* Separa el contenido y la imagen */
+    align-items: center; /* Centra verticalmente */
+    margin: 15px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.project-content {
+    flex: 1; /* Permite que el contenido ocupe el espacio disponible */
+}
+
+.project-image {
+    width: 100px; /* Tamaño pequeño por defecto */
+    height: auto;
+    margin-left: 15px;
+}
+
+@media (min-width: 768px) {  /* Ajuste para pantallas de computadora */
+    .project-image {
+        width: 200px; /* Aumenta el tamaño en pantallas grandes */
+    }
+}
+
+/* Estilo para el botón flotante */
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 14px;
+    display: block; 
+}
+
+.chat-button:hover {
+    background-color: #0056b3;
+}
+
+.chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none; /* El chat está oculto inicialmente */
+}
+
+.chat-window {
+    padding: 10px;
+}
+
+.messages {
+    height: 200px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.messages div {
+    margin: 5px 0;
+}
+
+#userInput {
+    width: calc(100% - 60px);
+}
+
+button {
+    width: 50px;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #007bff;
+    color: #fff;
+}
+
+@media (max-width: 600px) {
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .chatbot {
+        width: 90%;
+    }
+}
+.categories {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas más pequeñas */
+    margin-bottom: 20px;
+}
+
+.categories h3 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    flex: 1; /* Permite que el título ocupe espacio flexible */
+}
+
+.category-list {
+    display: flex;
+    gap: 15px; /* Espacio entre las categorías */
+}
+
+.category-item {
+    padding: 10px 20px;
+    background-color: #007BFF; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    border-radius: 30px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    flex-shrink: 0; /* Evita que los elementos se encojan */
+}
+
+.category-item:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .categories {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        align-items: flex-start; /* Alinea los elementos al inicio */
+    }
+
+    .category-list {
+        flex-wrap: wrap; /* Permite que las categorías se envuelvan */
+        width: 100%; 
+    }
+
+    .category-item {
+        max-width: 100%; /* Evita que se desborden */
+        margin-bottom: 10px; /* Espacio entre categorías en columna */
+    }
+}
+
+
