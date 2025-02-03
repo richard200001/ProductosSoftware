@@ -119,7 +119,19 @@ function getResponseForMessage(message) {
         "Sistema de Gestión de Mantenimiento": [
             "gestión de mantenimiento","mantenimiento","mantenimientos", "control de mantenimiento", "mantenimiento preventivo", "sistema de mantenimiento", "planificación de mantenimiento", 
             "gestión de equipos", "gestión de instalaciones", "mantenimiento industrial", "software de mantenimiento"
+        ],
+       "juegos 2d": [
+            "juegos 2D","juegos", "videojuegos 2D", "juegos interactivos", "videojuegos educativos 2D", "juegos arcade", "juegos de plataformas", "juegos de acción 2D", 
+            "juegos de aventuras 2D", "juegos pixel art", "juegos retro 2D", "diseño de juegos 2D", "desarrollo de juegos 2D", "juegos en 2D para móviles", 
+            "juegos para navegador 2D", "juegos 2D multiplataforma", "videojuegos con gráficos 2D", "juegos con física 2D", "desarrollo de videojuegos 2D"
+        ],
+        "juegos educativos": [
+            "juegos educativos", "educativo","educativos", "videojuegos educativos", "juegos didácticos", "aprendizaje a través del juego", "juegos para niños", "juegos interactivos educativos", 
+            "juegos de matemáticas", "juegos de ciencia", "juegos para aprender idiomas", "juegos para educación infantil", "videojuegos educativos 2D", "juegos de lógica", 
+            "juegos de memoria", "juegos educativos interactivos", "juegos para enseñar habilidades", "plataformas educativas", "juegos de geografía", "juegos de historia", 
+            "aplicaciones educativas", "juegos para mejorar el pensamiento crítico", "videojuegos para el aula", "gamificacion", "gamificación"
         ]
+
     };
 
     // Comprobar por términos clave y respuestas asociadas
@@ -199,6 +211,14 @@ function getProductDetails(category) {
         "Sistema de Gestión de Mantenimiento": {
             description: "Para planificar y realizar el mantenimiento de equipos e instalaciones.",
             price: "$3,500,000 - $23,000,000"
+        },
+        "juegos 2d":{
+            description: "Desarrollamos juegos 2D entretenidos para disfrutar en cualquier dispositivo",
+            price: "$150,000 - 3,000,000"
+        },
+        "juegos educativos":{
+            description: "Desarrollamos juegos interactivos y educativos para que los niños aprendan mientras se divierten, a partir de $150,000.",
+            price: "$150,000 - 3,000,000"
         }
     };
 
@@ -222,4 +242,10 @@ function showCategory(category) {
 document.getElementById('chatButton').addEventListener('click', function() {
     document.getElementById('chatbot').style.display = 'block'; // Mostrar el chat
     document.getElementById('chatButton').style.display = 'none'; // Ocultar el botón
+});
+
+// Cerrar el chat cuando se haga clic en la "X"
+document.getElementById('closeChat').addEventListener('click', function() {
+    document.getElementById('chatbot').style.display = 'none'; // Ocultar el chat
+    document.getElementById('chatButton').style.display = 'block'; // Volver a mostrar el botón
 });

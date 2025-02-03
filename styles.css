@@ -11,11 +11,53 @@ body {
 }
 
 header {
-    background: #007bff;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #007bff; 
+    color: white;
+    padding: 15px 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidad */
 }
+
+/* Contenedor del logo */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Logo: ajusta el tamaño según sea necesario */
+.logo {
+    width: 110px;
+    height: auto;
+    border-radius:50% ;
+    -webkit-border-radius:50% ;
+    -moz-border-radius:50% ;
+    -ms-border-radius:50% ;
+    -o-border-radius:50% ;
+}
+
+/* Contenedor del texto */
+.text-container {
+    text-align: right;
+}
+
+/* Título */
+.text-container h1 {
+    font-size: 2.2rem;
+    margin: 0;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Subtítulo */
+.text-container p {
+    font-size: 1.1rem;
+    margin-top: 5px;
+    font-weight: 300;
+}
+
 nav {
     background: #007bff; /* Color de fondo  */
     padding: 15px 20px; /* Espaciado interno */
@@ -79,7 +121,6 @@ nav a:hover {
         width: 200px; /* Aumenta el tamaño en pantallas grandes */
     }
 }
-
 /* Estilo para el botón flotante */
 .chat-button {
     position: fixed;
@@ -93,49 +134,138 @@ nav a:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     font-size: 14px;
-    display: block; 
+    display: block;
 }
 
 .chat-button:hover {
     background-color: #0056b3;
 }
 
+/* Estilo para el chatbot */
 .chatbot {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 300px;
-    background: #f9f9f9;
-    border: 1px solid #ccc;
+    width: 350px;
+    background: #fff;
+    border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: none; /* El chat está oculto inicialmente */
+    display: none;
+    max-height: 450px;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
+/* Estilo para la ventana del chat */
 .chat-window {
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
 }
 
+/* Contenedor de mensajes */
 .messages {
-    height: 200px;
+    height: 300px;
     overflow-y: auto;
+    padding: 25px;
+    border-bottom: 1px solid #ddd;
+    flex-grow: 1;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+
+/* Estilo para los mensajes del usuario */
+.messages .user {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end;
+    border-radius: 15px 15px 0 15px;
+    padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ddd;
-    padding: 5px;
-    border-radius: 5px;
+    width: auto;
+    max-width: 100%;
+    word-wrap: break-word;
+    box-sizing: border-box;
 }
 
-.messages div {
-    margin: 5px 0;
+/* Estilo para los mensajes del bot */
+.messages .ai {
+    background-color: #f1f1f1;
+    color: #333;
+    align-self: flex-start;
+    border-radius: 15px 15px 15px 0;
+    padding: 10px;
+    margin-bottom: 10px;
+    max-width: 75%;
+    word-wrap: break-word;
+    box-sizing: border-box;
+}
+/* Contenedor del input y botón */
+.input-container {
+    display: flex;              /* Uso flexbox para alinear horizontalmente */
+    width: 100%;                /* Ocupa todo el ancho disponible */
+    padding: 10px;
+    box-sizing: border-box;
 }
 
+/* Estilo para el campo de entrada de texto */
 #userInput {
-    width: calc(100% - 60px);
+    flex: 0 0 75%;              
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
 }
 
+/* Estilo para el botón de envío */
 button {
-    width: 50px;
+    flex: 0 0 25%;              
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-sizing: border-box;
 }
+
+
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para el botón de cierre (X) */
+.close-chat {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close-chat:hover {
+    color: #f00;
+}
+
+/* Animación para mostrar el chat */
+.chatbot {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
 
 
 footer {
