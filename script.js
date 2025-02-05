@@ -250,3 +250,16 @@ document.getElementById('closeChat').addEventListener('click', function() {
     document.getElementById('chatButton').style.display = 'block'; // Volver a mostrar el botón
 });
 
+window.onload = function() {
+    // Verifica si el parámetro "message=sent" está en la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('message') && urlParams.get('message') === 'sent') {
+        // Muestra el modal
+        document.getElementById('successModal').style.display = 'flex';
+        
+        // Cierra el modal después de 3 segundos (3000 ms)
+        setTimeout(function() {
+            document.getElementById('successModal').style.display = 'none';
+        }, 2500);
+    }
+};
