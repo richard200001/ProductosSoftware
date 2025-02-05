@@ -250,20 +250,3 @@ document.getElementById('closeChat').addEventListener('click', function() {
     document.getElementById('chatButton').style.display = 'block'; // Volver a mostrar el botón
 });
 
-document.getElementById("contactForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // Evita el envío inmediato del formulario
-
-    // Mostrar el modal
-    document.getElementById("successModal").style.display = "flex";
-
-    // Enviar el formulario después de 2 segundos 
-    setTimeout(function () {
-        
-        event.target.submit();
-    }, 2000); // El formulario se enviará después de 2 segundos
-});
-
-// Esto cierra el modal después de 3 segundos
-setTimeout(function () {
-    document.getElementById("successModal").style.display = "none";
-}, 3000);
