@@ -256,14 +256,24 @@ document.getElementById("contactForm").addEventListener("submit", function (even
     // Mostrar el modal
     document.getElementById("successModal").style.display = "flex";
 
-    // Enviar el formulario de forma programática
+    // Simula el envío del formulario
     setTimeout(function () {
-        document.getElementById("contactForm").submit(); // Ahora el formulario se envía después de que se muestra el modal
-    }, 1000); // Después de 2 segundos, se enviará el formulario
-
-    // Ocultar el modal después de 3 segundos
-    setTimeout(function () {
-        document.getElementById("successModal").style.display = "none";
-    }, 3000); // El modal se ocultará después de 3 segundos
+        // Aquí enviamos el formulario por AJAX para evitar la recarga de página
+        // Usamos un Fetch API para enviar el formulario sin recargar
+        let formData = new FormData(document.getElementById("contactForm"));
+        
+        fetch('https://formsubmit.co/productossoftware2@gmail.com', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            // Cuando el formulario se envíe correctamente, redirige
+            window.location.href = document.querySelector("input[name='_redirect']").value;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // Si hay un error, ocultamos el modal 
+            document.getElementById("successModal").style.display = "none";
+        });
+    }, 2000); // El formulario se enviará después de 2 segundos
 });
-
