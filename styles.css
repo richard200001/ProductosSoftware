@@ -435,3 +435,33 @@ footer {
     border-radius: 5px;
     text-align: center;
 }
+
+
+.logo-redes {
+    display: flex;
+    justify-content: center; 
+    gap: 15px; /* Agrega separación entre los íconos */
+}
+
+.list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centra los íconos */
+    gap: 15px; /* Separación entre los íconos */
+}
+
+.list li {
+    display: inline-block;
+    margin: 0;
+}
+
+.list li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+h2 {
+    margin-top: 20px;
+}
